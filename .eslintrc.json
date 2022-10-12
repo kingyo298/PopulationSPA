@@ -15,6 +15,7 @@
     "jsx-a11y",
     "@typescript-eslint",
     "import",
+    "prefer-arrow",
     "simple-import-sort" // Plugin for sorting imports in file.
   ],
   "rules": {
@@ -34,6 +35,14 @@
         "ignoreCase": true,
         "reservedFirst": true,
         "noSortAlphabetically": true
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
       }
     ]
   },
