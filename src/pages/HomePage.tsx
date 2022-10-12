@@ -1,7 +1,13 @@
 import "../assets/css/HomePage.module.css";
 
+import Header from "../components/common/Header";
+
 const HomePage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default HomePage;
