@@ -1,9 +1,48 @@
+.topbar {
+  height: 30px;
+  background-color: var(--main-color);
+}
+.main__container {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 48px;
+  margin-bottom: 64px;
+}
+.footer__container {
+  margin: 0 auto;
+  text-align: center;
+}
+.footer {
+  background-color: #304455;
+  color: white;
+  padding: 15px 0;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /* スマートフォン */
 @media screen and (max-width: 325px) {
 }
 /* タブレット */
 @media screen and (min-width: 326px) and (max-width: 864px) {
+  .main__container {
+    width: 96%;
+    padding: 0 2%;
+  }
 }
 /* PC */
 @media screen and (min-width: 865px) {
+  .main__container {
+    width: 90%;
+    padding: 5%;
+    padding: 524px 0;
+  }
 }
