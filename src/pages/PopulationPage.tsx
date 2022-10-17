@@ -1,7 +1,11 @@
+import Checkbox from "@/components/PopulationPage/Checkbox";
+
 const PopulationPage = () => {
   return (
     <>
-      <div></div>
+      <div>
+        <Checkbox text="群馬県" />
+      </div>
     </>
   );
 };

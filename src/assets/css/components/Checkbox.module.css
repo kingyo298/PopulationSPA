@@ -1,23 +1,15 @@
-.header {
-  background-color: #f0a202;
+@import "../variables.css";
+.label {
 }
-.header__inner {
-  padding: 16px 5%;
+input[type="checkbox"] {
+  display: none;
 }
 /* スマートフォン */
 @media screen and (max-width: 325px) {
-  .header {
-    text-align: center;
-  }
 }
 /* タブレット */
 @media screen and (min-width: 326px) and (max-width: 864px) {
-  .header {
-    text-align: center;
-  }
 }
 /* PC */
 @media screen and (min-width: 865px) {
-  .header {
-  }
 }
