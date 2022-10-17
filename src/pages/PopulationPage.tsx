@@ -14,6 +14,20 @@ const PopulationPage = () => {
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
   useEffect(() => {
     const fetchData = async () => {
+      const response = await axios.get(
+        "/api/v1/population/composition/perYear?prefCode=1&cityCode=-",
+        {
+          headers: {
+            "X-API-KEY": "BGYts3U0zrQf5niqALO5C5uVOnun5HjuckAAkx9u",
+          },
+        }
+      );
+      console.log(response.data);
+    };
+    fetchData();
+  });
+  useEffect(() => {
+    const fetchData = async () => {
       const response = await axios.get("/api/v1/prefectures", {
         headers: {
           "X-API-KEY": "BGYts3U0zrQf5niqALO5C5uVOnun5HjuckAAkx9u",
