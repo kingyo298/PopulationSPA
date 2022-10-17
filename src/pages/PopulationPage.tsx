@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "@/components/PopulationPage/Checkbox";
 
 import PopulationPageStyle from "../assets/css/PopulationPage.module.css";
+import Chart from "../components/PopulationPage/Chart";
 
 interface Prefecture {
   prefCode: number;
@@ -47,6 +48,9 @@ const PopulationPage = () => {
             </div>
           );
         })}
+      </div>
+      <div className={PopulationPageStyle.chart__wrapper}>
+        <Chart />
       </div>
     </>
   );
