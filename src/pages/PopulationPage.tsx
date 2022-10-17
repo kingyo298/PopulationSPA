@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import Checkbox from "@/components/PopulationPage/Checkbox";
 
+import PopulationPageStyle from "../assets/css/PopulationPage.module.css";
+
 interface Prefecture {
   prefCode: number;
   prefName: string;
@@ -23,13 +25,15 @@ const PopulationPage = () => {
   }, []);
   return (
     <>
-      {prefectures.map(prefecture => {
-        return (
-          <div key={prefecture.prefCode}>
-            <Checkbox text={prefecture.prefName} />
-          </div>
-        );
-      })}
+      <div className={PopulationPageStyle.checkboxes__wrapper}>
+        {prefectures.map(prefecture => {
+          return (
+            <div key={prefecture.prefCode}>
+              <Checkbox text={prefecture.prefName} />
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

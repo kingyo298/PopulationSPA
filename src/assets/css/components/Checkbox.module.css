@@ -1,9 +1,9 @@
 @import "../variables.css";
 .label {
 }
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
-}
+} */
 /* スマートフォン */
 @media screen and (max-width: 325px) {
 }
