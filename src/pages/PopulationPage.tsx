@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 import Checkbox from "@/components/PopulationPage/Checkbox";
@@ -12,21 +11,30 @@ interface Prefecture {
   prefName: string;
 }
 
+type fetchData = {
+  data: populationDataPerYear[];
+  label: string;
+};
+type populationDataPerYear = {
+  year: number;
+  value: number;
+  rate?: number;
+};
+
 const PopulationPage = () => {
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);
+  const [populationData, setPopulationData] = useState<fetchData[]>([]);
   useEffect(() => {
-    const fetchData = async (code: number) => {
+    const fetchPopulationData = async (code: number) => {
       const response = await API.population(code);
-      console.log(response.data.result);
+      setPopulationData(response.data.result.data);
     };
-    fetchData(1);
-  });
-  useEffect(() => {
-    const fetchData = async () => {
+    const fetchPrefectures = async () => {
       const response = await API.prefectures();
       setPrefectures(response.data.result);
     };
-    fetchData();
+    fetchPrefectures();
+    fetchPopulationData(1);
   }, []);
   return (
     <>
@@ -41,7 +49,7 @@ const PopulationPage = () => {
       </div>
       <h1>都道府県別総人口の推移</h1>
       <div className={PopulationPageStyle.chart__wrapper}>
-        <Chart />
+        <Chart populationData={populationData} />
       </div>
     </>
   );
