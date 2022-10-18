@@ -1,25 +1,10 @@
 import { useEffect, useState } from "react";
 
+import { API } from "@/api";
+import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
+import Chart from "@/components/PopulationPage/Chart";
 import Checkbox from "@/components/PopulationPage/Checkbox";
-
-import { API } from "../api";
-import PopulationPageStyle from "../assets/css/PopulationPage.module.css";
-import Chart from "../components/PopulationPage/Chart";
-
-interface Prefecture {
-  prefCode: number;
-  prefName: string;
-}
-
-type fetchData = {
-  data: populationDataPerYear[];
-  label: string;
-};
-type populationDataPerYear = {
-  year: number;
-  value: number;
-  rate?: number;
-};
+import { fetchData, Prefecture } from "@/types";
 
 const PopulationPage = () => {
   const [prefectures, setPrefectures] = useState<Prefecture[]>([]);

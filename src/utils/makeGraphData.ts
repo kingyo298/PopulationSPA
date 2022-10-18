@@ -1,12 +1,4 @@
-type fetchData = {
-  data: populationDataPerYear[];
-  label: string;
-};
-type populationDataPerYear = {
-  year: number;
-  value: number;
-  rate?: number;
-};
+import { fetchData } from "@/types";
 
 const makeGraphDataFromFetchData = (fetchData: fetchData[]) => {
   const result = [];
