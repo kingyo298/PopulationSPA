@@ -11,10 +11,11 @@ import {
   YAxis,
 } from "recharts";
 
-import { populationDataPerYear } from "@/types";
+import { populationDataPerYear, Prefecture } from "@/types";
 
 interface chartProps {
-  populationData: populationDataPerYear<string>[][];
+  populationData: populationDataPerYear<string>[];
+  prefectures: Prefecture[];
 }
 const PopulationChart = (props: chartProps) => {
   return (
@@ -48,12 +49,17 @@ const PopulationChart = (props: chartProps) => {
         />
         <Tooltip />
         <Legend verticalAlign="bottom" />
-        <Line
-          type="monotone"
-          dataKey="北海道"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
+        {props.prefectures.map((pre: Prefecture) => {
+          return (
+            <Line
+              key={pre.prefCode}
+              type="monotone"
+              dataKey={pre.prefName}
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+          );
+        })}
       </LineChart>
     </ResponsiveContainer>
   );

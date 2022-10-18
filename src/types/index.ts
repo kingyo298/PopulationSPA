@@ -13,5 +13,5 @@ export type populationDataPerYear<K extends string> = {
 };
 
 export type checkList = {
-  [key: number]: boolean;
+  [key: string]: boolean;
 };

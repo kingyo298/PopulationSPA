@@ -5,6 +5,7 @@ export const addFetchData = (
   prefecture: string,
   array: populationDataPerYear<string>[]
 ) => {
+  const result: populationDataPerYear<string>[] = [];
   if (fetchData.length !== 0) {
     const populationData = fetchData[0].data;
     if (array.length === 0) {
@@ -13,16 +14,17 @@ export const addFetchData = (
           year: populationData[i].year + "年",
           [prefecture]: populationData[i].value,
         };
-        array.push(populationGraphDataPerYear);
+        result.push(populationGraphDataPerYear);
       }
     } else {
       for (let i = 0; i < array.length; i++) {
         const item = array[i];
         item[prefecture] = populationData[i].value;
+        result.push(item);
       }
     }
   }
-  return array;
+  return result;
 };
 
 export const removeFetchData = (
@@ -30,9 +32,7 @@ export const removeFetchData = (
   prefecture: string
 ) => {
   for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
     delete array[i][prefecture];
-    console.log(array[i]);
   }
   return array;
 };
