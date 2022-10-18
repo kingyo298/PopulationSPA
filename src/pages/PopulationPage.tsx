@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { API } from "@/api";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";

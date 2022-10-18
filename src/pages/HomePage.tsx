@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import HomePageStyle from "../assets/css/HomePage.module.css";
-import Button from "../components/HomePage/Button";
+import HomePageStyle from "@/assets/css/HomePage.module.css";
+import Button from "@/components/HomePage/Button";
 
 const HomePage = () => {
   return (

@@ -1,4 +1,4 @@
-import ButtonStyle from "../../assets/css/components/Button.module.css";
+import ButtonStyle from "@/assets/css/components/Button.module.css";
 
 const Button = () => {
   return (

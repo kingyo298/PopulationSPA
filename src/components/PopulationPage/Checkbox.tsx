@@ -1,4 +1,4 @@
-import CheckboxStyle from "../../assets/css/components/Checkbox.module.css";
+import CheckboxStyle from "@/assets/css/components/Checkbox.module.css";
 
 interface Props {
   text: string;

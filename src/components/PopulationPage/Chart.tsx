@@ -1,4 +1,4 @@
-import "../../assets/css/components/Rechart.css";
+import "@/assets/css/components/Rechart.css";
 
 import {
   CartesianGrid,
