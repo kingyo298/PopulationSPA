@@ -1,6 +1,5 @@
 import "../../assets/css/components/Rechart.css";
 
-import { useCallback } from "react";
 import {
   CartesianGrid,
   Legend,
@@ -12,33 +11,16 @@ import {
   YAxis,
 } from "recharts";
 
-import makeGraphDataFromFetchData from "../../utils/makeGraphData";
-
-type fetchData = {
-  data: populationDataPerYear[];
-  label: string;
-};
-
-type populationDataPerYear = {
-  year: number;
-  value: number;
-  rate?: number;
-};
+import { populationDataPerYear } from "@/types";
 
 interface chartProps {
-  populationData: fetchData[];
+  populationData: populationDataPerYear<string>[][];
 }
 const PopulationChart = (props: chartProps) => {
-  const makeGraphData = useCallback((data: fetchData[]) => {
-    return makeGraphDataFromFetchData(data);
-  }, []);
-
-  const graphData = makeGraphData(props.populationData);
-
   return (
     <ResponsiveContainer>
       <LineChart
-        data={graphData}
+        data={props.populationData}
         margin={{ top: 5, right: 60, left: 30, bottom: 90 }}
       >
         <CartesianGrid strokeDasharray="3 3" />

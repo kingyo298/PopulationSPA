@@ -4,12 +4,14 @@ export type Prefecture = {
 };
 
 export type fetchData = {
-  data: populationDataPerYear[];
+  data: populationDataPerYear<string>[];
   label: string;
 };
 
-export type populationDataPerYear = {
-  year: number;
-  value: number;
-  rate?: number;
+export type populationDataPerYear<K extends string> = {
+  [key in K]: string | number;
+};
+
+export type checkList = {
+  [key: number]: boolean;
 };
