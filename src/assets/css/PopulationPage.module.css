@@ -6,4 +6,5 @@
 .chart__wrapper {
   height: 720px;
   width: 900px;
+  margin: auto;
 }

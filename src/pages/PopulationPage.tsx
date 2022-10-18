@@ -23,7 +23,7 @@ const PopulationPage = () => {
           },
         }
       );
-      console.log(response.data);
+      console.log(response.data.result);
     };
     fetchData();
   });
@@ -49,6 +49,7 @@ const PopulationPage = () => {
           );
         })}
       </div>
+      <h1>都道府県別総人口の推移</h1>
       <div className={PopulationPageStyle.chart__wrapper}>
         <Chart />
       </div>
