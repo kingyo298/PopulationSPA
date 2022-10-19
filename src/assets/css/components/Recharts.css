@@ -9,29 +9,14 @@
   flex-wrap: wrap;
   background-color: var(--primary-bg);
   gap: 5px;
-  margin-left: 30px;
   padding: 10px !important;
-  height: 70px;
+  max-height: 70px;
 }
 .recharts-legend-item {
   width: 12.5%;
 }
 
 @media screen and (max-width: 540px) {
-  .recharts-legend-wrapper {
-    padding-bottom: 30px;
-    width: calc(100% - 150px) !important;
-  }
-  .recharts-default-legend {
-    text-align: left !important;
-    display: flex;
-    overflow: scroll;
-    flex-wrap: wrap;
-    background-color: var(--primary-bg);
-    gap: 5px;
-    padding: 10px !important;
-    height: 70px;
-  }
   .recharts-legend-item {
     width: 50%;
   }

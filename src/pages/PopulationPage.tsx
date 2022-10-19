@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { API } from "@/api";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
+import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 import Chart from "@/components/PopulationPage/Chart/Chart";
 import Checkbox from "@/components/PopulationPage/Checkbox";
@@ -79,7 +80,7 @@ const PopulationPage = () => {
   return (
     <>
       <Header />
-      <div className={PopulationPageStyle.container}>
+      <section className={PopulationPageStyle.container}>
         <div className={PopulationPageStyle.checkboxes__wrapper}>
           {prefectures.map(prefecture => {
             return (
@@ -102,7 +103,8 @@ const PopulationPage = () => {
             <Chart populationData={populationData} prefectures={prefectures} />
           )}
         </div>
-      </div>
+      </section>
+      <Footer />
     </>
   );
 };
