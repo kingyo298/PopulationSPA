@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import HeaderStyle from "@/assets/css/components/Header.module.css";
 
 const Header = () => {
@@ -5,7 +7,9 @@ const Header = () => {
     <>
       <div className={HeaderStyle.header}>
         <div className={HeaderStyle.header__inner}>
-          <h1>Population Charts</h1>
+          <h1>
+            <Link to="/">Population Charts</Link>
+          </h1>
         </div>
       </div>
     </>
