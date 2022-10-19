@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { API } from "@/api";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
+import Header from "@/components/common/Header";
 import Chart from "@/components/PopulationPage/Chart/Chart";
 import Checkbox from "@/components/PopulationPage/Checkbox";
 import { populationDataPerYear, Prefecture } from "@/types";
@@ -77,6 +78,7 @@ const PopulationPage = () => {
 
   return (
     <>
+      <Header />
       <div className={PopulationPageStyle.checkboxes__wrapper}>
         {prefectures.map(prefecture => {
           return (
