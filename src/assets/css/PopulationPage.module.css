@@ -28,7 +28,7 @@
     font-size: 9px;
   }
   .chart__wrapper {
-    height: 900px;
+    height: 320px;
     width: 320px;
     margin: auto;
   }
@@ -44,8 +44,8 @@
 /* タブレット */
 @media screen and (min-width: 540px) and (max-width: 1000px) {
   .chart__wrapper {
-    height: 900px;
-    width: 500px;
+    height: 540px;
+    width: 540px;
     margin: auto;
   }
 }
