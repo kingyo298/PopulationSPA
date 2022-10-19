@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { API } from "@/api";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
-import Chart from "@/components/PopulationPage/Chart";
+import Chart from "@/components/PopulationPage/Chart/Chart";
 import Checkbox from "@/components/PopulationPage/Checkbox";
 import { populationDataPerYear, Prefecture } from "@/types";
 import { initCheckedList } from "@/utils/initCheckedList";

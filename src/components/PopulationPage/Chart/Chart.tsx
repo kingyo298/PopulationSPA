@@ -11,6 +11,7 @@ import {
   YAxis,
 } from "recharts";
 
+import { LineColor } from "@/components/PopulationPage/Chart/LineColor";
 import { populationDataPerYear, Prefecture } from "@/types";
 
 interface chartProps {
@@ -49,17 +50,20 @@ const PopulationChart = (props: chartProps) => {
         />
         <Tooltip />
         <Legend verticalAlign="bottom" />
-        {props.prefectures.map((pre: Prefecture) => {
-          return (
-            <Line
-              key={pre.prefCode}
-              type="monotone"
-              dataKey={pre.prefName}
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-          );
-        })}
+        {props.populationData.length !== 0 &&
+          Object.keys(props.populationData[0])
+            .filter(key => key !== "year")
+            .map(key => {
+              return (
+                <Line
+                  key={key}
+                  type="monotone"
+                  dataKey={key}
+                  stroke={LineColor[key]}
+                  activeDot={{ r: 8 }}
+                />
+              );
+            })}
       </LineChart>
     </ResponsiveContainer>
   );

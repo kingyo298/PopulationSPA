@@ -15,3 +15,7 @@ export type populationDataPerYear<K extends string> = {
 export type checkList = {
   [key: string]: boolean;
 };
+
+export type LineColorType = {
+  [key: string]: string;
+};

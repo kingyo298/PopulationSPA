@@ -10,5 +10,5 @@ const api = axios.create({
 export const API = {
   prefectures: () => api.get("/prefectures"),
   population: (code: number) =>
-    api.get(`/population/composition/perYear?cityCode=-&prefCode=${code + 1}`),
+    api.get(`/population/composition/perYear?cityCode=-&prefCode=${code}`),
 };
