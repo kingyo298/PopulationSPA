@@ -29,6 +29,9 @@
   text-align: center;
   padding: 30px 0;
 }
+.resetButton {
+  padding-top: 15px;
+}
 
 /* スマートフォン */
 @media screen and (max-width: 540px) {

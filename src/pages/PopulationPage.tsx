@@ -79,6 +79,17 @@ const PopulationPage = () => {
     console.log(populationData);
   };
 
+  const resetPopulationData = () => {
+    setPopulationData([]);
+    setCheckedList(initCheckedList());
+  };
+
+  const ResetButton = (
+    <div className={PopulationPageStyle.resetButton}>
+      <button onClick={resetPopulationData}>リセットする</button>
+    </div>
+  );
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(prefectures);
     setCheckedList({
@@ -101,6 +112,7 @@ const PopulationPage = () => {
         <div className={PopulationPageStyle.checkboxes__section__inner}>
           <div className={PopulationPageStyle.guideButton}>
             {GuideOfCheckBox}
+            {open && ResetButton}
           </div>
           <div className={PopulationPageStyle.checkboxes__wrapper}>
             {open &&
