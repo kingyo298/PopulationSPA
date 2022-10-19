@@ -1,15 +1,21 @@
 @import "../variables.css";
 .label {
 }
+.checkbox {
+  width: 8.33333333333%;
+}
 /* input[type="checkbox"] {
   display: none;
 } */
 /* スマートフォン */
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 540px) {
+  .checkbox {
+    width: 50%;
+  }
 }
 /* タブレット */
-@media screen and (min-width: 326px) and (max-width: 864px) {
-}
-/* PC */
-@media screen and (min-width: 865px) {
+@media screen and (min-width: 541px) and (max-width: 1000px) {
+  .checkbox {
+    width: 25%;
+  }
 }

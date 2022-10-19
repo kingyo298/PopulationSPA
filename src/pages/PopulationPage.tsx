@@ -79,26 +79,29 @@ const PopulationPage = () => {
   return (
     <>
       <Header />
-      <div className={PopulationPageStyle.checkboxes__wrapper}>
-        {prefectures.map(prefecture => {
-          return (
-            <div key={prefecture.prefCode}>
+      <div className={PopulationPageStyle.container}>
+        <div className={PopulationPageStyle.checkboxes__wrapper}>
+          {prefectures.map(prefecture => {
+            return (
               <Checkbox
+                key={prefecture.prefCode}
                 id={`${prefecture.prefCode}`}
                 text={prefecture.prefName}
                 value={prefecture.prefCode}
                 checked={checkedList[prefecture.prefCode]}
                 onChange={handleChange}
               />
-            </div>
-          );
-        })}
-      </div>
-      <h1>都道府県別総人口の推移</h1>
-      <div className={PopulationPageStyle.chart__wrapper}>
-        {populationData.length !== 0 && (
-          <Chart populationData={populationData} prefectures={prefectures} />
-        )}
+            );
+          })}
+        </div>
+        <div className={PopulationPageStyle.title__wrapper}>
+          <h1>都道府県別総人口の推移</h1>
+        </div>
+        <div className={PopulationPageStyle.chart__wrapper}>
+          {populationData.length !== 0 && (
+            <Chart populationData={populationData} prefectures={prefectures} />
+          )}
+        </div>
       </div>
     </>
   );
