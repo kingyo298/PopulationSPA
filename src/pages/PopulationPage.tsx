@@ -28,7 +28,6 @@ const PopulationPage = () => {
     fetchPrefectures();
   }, []);
   const handleClick = () => {
-    console.log("Clicked!");
     setOpen(!open);
   };
   const GuideOfCheckBox = (
@@ -43,7 +42,6 @@ const PopulationPage = () => {
   );
 
   const addPopulationData = (code: number, prefectures: Prefecture[]) => {
-    console.log(code);
     const fetchData = async (code: number) => {
       const response = await API.population(code);
       const designatedPrefecture = prefectures.find(
@@ -60,11 +58,9 @@ const PopulationPage = () => {
       setPopulationData(graphData);
     };
     fetchData(code);
-    console.log(populationData);
   };
 
   const removePopulationData = (code: number, prefectures: Prefecture[]) => {
-    console.log(code);
     const designatedPrefecture = prefectures.find(
       prefecture => prefecture.prefCode === code
     );
@@ -76,7 +72,6 @@ const PopulationPage = () => {
       designatedPrefecture.prefName
     );
     setPopulationData(updatedArray);
-    console.log(populationData);
   };
 
   const resetPopulationData = () => {
@@ -91,7 +86,6 @@ const PopulationPage = () => {
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(prefectures);
     setCheckedList({
       ...checkedList,
       [e.target.id]: e.target.checked,
