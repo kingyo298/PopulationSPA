@@ -1,5 +1,6 @@
 # Population SPA
-RESAS API（https://opendata.resas-portal.go.jp/）　から、都道府県の一覧と、各都道府県の総人口の推移データを取得し、グラフで見ることができるアプリケーション
+RESAS API（https://opendata.resas-portal.go.jp/）　
+から、都道府県の一覧と、各都道府県の総人口の推移データを取得し、グラフで見ることができるアプリケーション
 
 ## What's inside?
 - TopページのStart!ボタンを押すと、メインページにすすむ
