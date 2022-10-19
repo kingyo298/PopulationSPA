@@ -19,3 +19,8 @@ export type checkList = {
 export type LineColorType = {
   [key: string]: string;
 };
+
+export type ButtonProps = {
+  text: string;
+  onClick?: () => void;
+};

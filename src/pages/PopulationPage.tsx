@@ -4,6 +4,7 @@ import { API } from "@/api";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
+import Button from "@/components/HomePage/Button";
 import Chart from "@/components/PopulationPage/Chart/Chart";
 import Checkbox from "@/components/PopulationPage/Checkbox";
 import { populationDataPerYear, Prefecture } from "@/types";
@@ -16,6 +17,7 @@ const PopulationPage = () => {
     populationDataPerYear<string>[]
   >([]);
   const [checkedList, setCheckedList] = useState(initCheckedList());
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchPrefectures = async () => {
@@ -24,6 +26,20 @@ const PopulationPage = () => {
     };
     fetchPrefectures();
   }, []);
+  const handleClick = () => {
+    console.log("Clicked!");
+    setOpen(!open);
+  };
+  const GuideOfCheckBox = (
+    <div>
+      <Button
+        text={open ? "閉じる" : "都道府県を選択しましょう!"}
+        onClick={() => {
+          handleClick();
+        }}
+      />
+    </div>
+  );
 
   const addPopulationData = (code: number, prefectures: Prefecture[]) => {
     console.log(code);
@@ -81,19 +97,25 @@ const PopulationPage = () => {
     <>
       <Header />
       <section className={PopulationPageStyle.container}>
-        <div className={PopulationPageStyle.checkboxes__wrapper}>
-          {prefectures.map(prefecture => {
-            return (
-              <Checkbox
-                key={prefecture.prefCode}
-                id={`${prefecture.prefCode}`}
-                text={prefecture.prefName}
-                value={prefecture.prefCode}
-                checked={checkedList[prefecture.prefCode]}
-                onChange={handleChange}
-              />
-            );
-          })}
+        <div className={PopulationPageStyle.checkboxes__section__inner}>
+          <div className={PopulationPageStyle.guideButton}>
+            {GuideOfCheckBox}
+          </div>
+          <div className={PopulationPageStyle.checkboxes__wrapper}>
+            {open &&
+              prefectures.map(prefecture => {
+                return (
+                  <Checkbox
+                    key={prefecture.prefCode}
+                    id={`${prefecture.prefCode}`}
+                    text={prefecture.prefName}
+                    value={prefecture.prefCode}
+                    checked={checkedList[prefecture.prefCode]}
+                    onChange={handleChange}
+                  />
+                );
+              })}
+          </div>
         </div>
         <div className={PopulationPageStyle.title__wrapper}>
           <h1>都道府県別総人口の推移</h1>

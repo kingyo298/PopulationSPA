@@ -12,7 +12,7 @@ const HomePage = () => {
         <section className={`${HomePageStyle.main__container}`}>
           <h1 className={HomePageStyle.title}>Welcome to Population App!</h1>
           <Link to="/populations">
-            <Button />
+            <Button text="Start!" />
           </Link>
         </section>
         <Footer />
