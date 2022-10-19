@@ -96,7 +96,9 @@ const PopulationPage = () => {
       </div>
       <h1>都道府県別総人口の推移</h1>
       <div className={PopulationPageStyle.chart__wrapper}>
-        <Chart populationData={populationData} prefectures={prefectures} />
+        {populationData.length !== 0 && (
+          <Chart populationData={populationData} prefectures={prefectures} />
+        )}
       </div>
     </>
   );
