@@ -1,0 +1,10 @@
+.checkboxes__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.chart__wrapper {
+  height: 720px;
+  width: 900px;
+  margin: auto;
+}

@@ -1,0 +1,35 @@
+@import "../variables.css";
+.button {
+  background: var(--main-color);
+  border-radius: 36px;
+  cursor: pointer;
+  border-color: #ffaa00;
+  border: 4px;
+  transition: all 0.3s;
+}
+.button:hover {
+  border: 6px;
+  background-color: #ffaa00;
+  transition: all 0.3s;
+}
+/* スマートフォン */
+@media screen and (max-width: 325px) {
+  .button {
+    width: 162px;
+    height: 36px;
+  }
+}
+/* タブレット */
+@media screen and (min-width: 326px) and (max-width: 864px) {
+  .button {
+    width: 243px;
+    height: 54px;
+  }
+}
+/* PC */
+@media screen and (min-width: 865px) {
+  .button {
+    width: 324px;
+    height: 72px;
+  }
+}

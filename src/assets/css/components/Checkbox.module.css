@@ -1,0 +1,15 @@
+@import "../variables.css";
+.label {
+}
+/* input[type="checkbox"] {
+  display: none;
+} */
+/* スマートフォン */
+@media screen and (max-width: 325px) {
+}
+/* タブレット */
+@media screen and (min-width: 326px) and (max-width: 864px) {
+}
+/* PC */
+@media screen and (min-width: 865px) {
+}
