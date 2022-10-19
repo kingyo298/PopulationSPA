@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { API } from "@/api";
+import CheckboxStyle from "@/assets/css/components/Checkbox.module.css";
 import PopulationPageStyle from "@/assets/css/PopulationPage.module.css";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
@@ -115,6 +116,7 @@ const PopulationPage = () => {
                   />
                 );
               })}
+            <div className={CheckboxStyle.checkbox}></div>
           </div>
         </div>
         <div className={PopulationPageStyle.title__wrapper}>

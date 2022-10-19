@@ -1,5 +1,6 @@
 @import "../variables.css";
 .label {
+  text-align: center;
 }
 .checkbox {
   width: 8.33333333333%;

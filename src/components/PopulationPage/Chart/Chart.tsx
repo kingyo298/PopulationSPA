@@ -28,7 +28,7 @@ const PopulationChart = (props: chartProps) => {
     <ResponsiveContainer>
       <LineChart
         data={props.populationData}
-        margin={{ top: 5, right: 60, left: 30, bottom: 30 }}
+        margin={{ top: 5, right: 60, left: 30, bottom: 60 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
