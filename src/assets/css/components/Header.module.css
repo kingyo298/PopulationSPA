@@ -4,6 +4,7 @@
 .header__inner {
   padding: 16px 5%;
 }
+/* スマートフォン */
 @media screen and (max-width: 325px) {
   .header {
     text-align: center;

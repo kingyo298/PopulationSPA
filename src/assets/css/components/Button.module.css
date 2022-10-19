@@ -12,6 +12,7 @@
   background-color: #ffaa00;
   transition: all 0.3s;
 }
+/* スマートフォン */
 @media screen and (max-width: 325px) {
   .button {
     width: 162px;
