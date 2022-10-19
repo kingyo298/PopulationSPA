@@ -17,7 +17,9 @@ const Checkbox = (props: Props) => {
         value={props.value}
         onChange={props.onChange}
       />
-      <label htmlFor="checkbox">{props.text}</label>
+      <label htmlFor={props.id} className={CheckboxStyle.label}>
+        {props.text}
+      </label>
     </div>
   );
 };

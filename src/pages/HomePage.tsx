@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import HomePageStyle from "@/assets/css/HomePage.module.css";
+import Footer from "@/components/common/Footer";
 import Button from "@/components/HomePage/Button";
 
 const HomePage = () => {
@@ -11,14 +12,10 @@ const HomePage = () => {
         <section className={`${HomePageStyle.main__container}`}>
           <h1 className={HomePageStyle.title}>Welcome to Population App!</h1>
           <Link to="/populations">
-            <Button />
+            <Button text="Start!" />
           </Link>
         </section>
-        <section className={HomePageStyle.footer}>
-          <div className={HomePageStyle.footer__container}>
-            <small>Copyright &copy; 2022 Hiroaki Okuda</small>
-          </div>
-        </section>
+        <Footer />
       </div>
     </>
   );
